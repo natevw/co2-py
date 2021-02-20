@@ -10,7 +10,7 @@ dev_path = sys.argv[1]
 
 STREAM_DATA = bytearray([0xFF, 0xFE, 0x01, 0xBD])
 
-with serial.Serial(dev_path, 19200, timeout=30) as ser:
+with serial.Serial(dev_path, 19200, timeout=90) as ser:
     ser.write(STREAM_DATA)
     while True:
         resp = ser.read(5)
