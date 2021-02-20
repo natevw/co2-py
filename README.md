@@ -123,6 +123,9 @@ pip install -r requirements.txt
 
 ## Script buffering issues when logging via tee
 
+It's nice to see the logs AND capture them. You can pipe into `tee` for this e.g. `./log_stream.py /dev/cu.Repleo-PL2303-00001014 | tee -a ~Desktop/co2_log.csv` but that didn't really work "right" by default because pipes introduce a buffer (4096 bytes or so, probably depending on platform) and so you won't see data for a long time. The scripts now workaround this by a Python flag.
+
+
     # (doesn't work... some potential explanation in comments and related posts)
     # https://unix.stackexchange.com/questions/25372/turn-off-buffering-in-pipe#comment225838_25378
     brew install coreutils
@@ -131,4 +134,3 @@ pip install -r requirements.txt
 
     # … passing `-u` to Python *does* work (now in shebang of scripts) via:
     # https://unix.stackexchange.com/questions/25372/turn-off-buffering-in-pipe#comment1037095_53445
-  
