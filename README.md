@@ -123,13 +123,12 @@ pip install -r requirements.txt
 
 ## Script buffering issues when logging via tee
 
-    # (doesn't work... )
+    # (doesn't work... some potential explanation in comments and related posts)
     # https://unix.stackexchange.com/questions/25372/turn-off-buffering-in-pipe#comment225838_25378
-    # https://unix.stackexchange.com/questions/25372/turn-off-buffering-in-pipe#comment1037095_53445
     brew install coreutils
     # the following does NOT work
     ./log_stream.py /dev/cu.Repleo-PL2303-00001014 | gstdbuf -o0 tee -a ~/Desktop/co2-overnight.csv
 
-    # … passing `-u` to Python *does* work (now in shebang of scripts)
-  
+    # … passing `-u` to Python *does* work (now in shebang of scripts) via:
+    # https://unix.stackexchange.com/questions/25372/turn-off-buffering-in-pipe#comment1037095_53445
   
