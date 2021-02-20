@@ -97,8 +97,27 @@ pip install -r requirements.txt
 
 ./log_stream.py /dev/cu.Repleo-PL2303-00001014
 # sensor doesn't output while it warms up, but eventually you should get output like…
-
+2021-02-20T12:10:04,1430
+2021-02-20T12:10:10,1446
+2021-02-20T12:10:16,1466
+2021-02-20T12:10:22,1484
+2021-02-20T12:10:27,1570
+2021-02-20T12:10:33,1571
+2021-02-20T12:10:39,1578
+2021-02-20T12:10:45,1575
+2021-02-20T12:10:51,1575
+2021-02-20T12:10:57,1583
+2021-02-20T12:11:03,1586
+2021-02-20T12:11:08,1587
+2021-02-20T12:11:14,1592
+2021-02-20T12:11:20,1597
+2021-02-20T12:11:26,1599
+2021-02-20T12:11:32,1603
+2021-02-20T12:11:38,1609
+2021-02-20T12:11:44,1607
 ```
+
+…which you can open as CSV in Excel or Numbers.app or R or whatever and graph.
 
 …or it might just crash and burn at the slightest provocation, usually because it didn't get any data back from the sensor (instead of the expected 5 bytes). Try turning it off and back on again or ???
 
